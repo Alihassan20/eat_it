@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "679674478927",
+    "project_id": "eat-it-641ad",
+    "storage_bucket": "eat-it-641ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:679674478927:android:0eb3964a3a6197504a853a",
+        "android_client_info": {
+          "package_name": "com.hagras.eat_it"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "679674478927-r18p44jdvg7vki6ttgttpce0igmg75vi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA51oWjhUfIWHr8Gk6bcJ9yK_ZapyX7CSo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "679674478927-r18p44jdvg7vki6ttgttpce0igmg75vi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
