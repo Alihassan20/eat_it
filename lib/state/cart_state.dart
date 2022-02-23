@@ -54,6 +54,9 @@ class CartStateController extends GetxController {
     return cart.length== 0 ? 0 : cart.map((e)=>e.quantity)
         .reduce ((value, element) => value+element);}
 
-  getShippingFee()=> sumCart()*0.1; //10% of total value =>
+  getShippingFee()=> sumCart()*0.1; //10% of total value
+
+  getSubTotal () => sumCart() + getShippingFee();
+
 
 }

@@ -1,4 +1,5 @@
 import 'package:badges/badges.dart';
+import 'package:eat_it/feature/cart_view/view.dart';
 import 'package:eat_it/state/cart_state.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -34,7 +35,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
             '${cartStateController.getQuantity()}',
             style: GoogleFonts.jetBrainsMono(color: Colors.white),
           ),
-          child: IconButton(onPressed: (){},icon:const Icon(Icons.shopping_bag)),
+          child: IconButton(onPressed: ()=>Get.to(()=>CartView()),icon:const Icon(Icons.shopping_bag)),
 
         ),
         ),
