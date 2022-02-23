@@ -12,6 +12,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../constant/color.dart';
 import '../../state/cart_state.dart';
 import '../../state/category_state.dart';
+import '../../state/main_state.dart';
 
 class FoodListView extends StatelessWidget {
   FoodListView({Key? key}) : super(key: key);
@@ -20,6 +21,8 @@ class FoodListView extends StatelessWidget {
   final categoryStateController = Get.put(CategoryStateController());
   final foodListStateController = Get.put(FoodListController());
   final CartStateController cartStateController = Get.put(CartStateController());
+  MainStateController controllers = Get.put(MainStateController());
+
 
 
   @override
@@ -121,7 +124,7 @@ class FoodListView extends StatelessWidget {
                                                   ),
                                                   IconButton(
                                                       onPressed: () {
-                                                        cartStateController.addToCart(categoryStateController.selectedCategory.value.foods[index]);
+                                                        cartStateController.addToCart(categoryStateController.selectedCategory.value.foods[index],controllers.selectedRestaurant.value.resturantId);
                                                       },
                                                       icon: const Icon(
                                                         Icons.add_shopping_cart,

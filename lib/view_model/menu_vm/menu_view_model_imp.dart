@@ -8,4 +8,9 @@ class MenuViewModelImp implements MenuViewModel{
     Get.to(()=> CategoryView());
   }
 
+  @override
+  void backToRestaurantlist() {
+    Get.back(closeOverlays: true,canPop: false);
+  }
+
 }

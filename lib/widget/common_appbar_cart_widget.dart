@@ -6,10 +6,13 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../constant/color.dart';
+import '../state/main_state.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   String title;
   final CartStateController cartStateController = Get.put(CartStateController());
+  MainStateController controllers = Get.put(MainStateController());
+
 
   AppBarWidget(this.title);
 
@@ -32,7 +35,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
           showBadge: true,
           badgeColor: Colors.red,
           badgeContent: Text(
-            '${cartStateController.getQuantity()}',
+            '${cartStateController.getQuantity(controllers.selectedRestaurant.value.resturantId)}',
             style: GoogleFonts.jetBrainsMono(color: Colors.white),
           ),
           child: IconButton(onPressed: ()=>Get.to(()=>CartView()),icon:const Icon(Icons.shopping_bag)),

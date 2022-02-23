@@ -9,6 +9,7 @@ class MenuScreen extends StatelessWidget {
   final ZoomDrawerController zoomDrawerController;
   final viewModel = MenuViewModelImp();
 
+
   MenuScreen(this.zoomDrawerController);
 
   @override
@@ -45,12 +46,22 @@ class MenuScreen extends StatelessWidget {
               Icons.home,
               () => zoomDrawerController.toggle!(),
             ),
+
             const Divider(),
             Menu_widget(
               'Categories',
               Icons.list,
-              () {
+                  () {
                 viewModel.navigateCategories();
+                print("p,h,an");
+              },
+            ),
+            const Divider(),
+            Menu_widget(
+              'Restaurant List',
+              Icons.restaurant_rounded,
+                  () {
+                viewModel.backToRestaurantlist();
                 print("p,h,an");
               },
             ),

@@ -10,6 +10,7 @@ import '../../constant/color.dart';
 import '../../state/cart_state.dart';
 import '../../state/food_details_state.dart';
 import '../../state/food_list_state.dart';
+import '../../state/main_state.dart';
 import '../../widget/food_details/food_details_image_widgets.dart';
 
 class FoodDetails extends StatelessWidget {
@@ -17,6 +18,8 @@ class FoodDetails extends StatelessWidget {
   final foodListStateController = Get.put(FoodListController());
   final foodDetailsStateController = Get.put(FoodDetailsStateController());
   final CartStateController cartStateController = Get.put(CartStateController());
+  MainStateController controllers = Get.put(MainStateController());
+
 
 
   @override
@@ -38,7 +41,7 @@ class FoodDetails extends StatelessWidget {
                 preferredSize:
                     Size.square(MediaQuery.of(context).size.height / 3),
                 child: FoodDetailsImageWidgets(foodListStateController,(){
-                   cartStateController.addToCart(foodListStateController.selectedFood.value,quantity:foodDetailsStateController.quantity.value);
+                   cartStateController.addToCart(foodListStateController.selectedFood.value,controllers.selectedRestaurant.value.resturantId,quantity:foodDetailsStateController.quantity.value);
                 })),
             iconTheme: const IconThemeData(color: Colors.black, size: 30),
           ),

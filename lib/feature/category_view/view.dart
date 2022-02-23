@@ -5,7 +5,6 @@ import 'package:eat_it/view_model/category_vm/category_view_model_ipm.dart';
 import 'package:eat_it/widget/common_appbar_cart_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../constant/color.dart';
@@ -24,7 +23,7 @@ final viewModel = CategoryViewModelImp();
    @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBarWidget('Categories'),
+      appBar:AppBarWidget('${'Categories'}-${mainStateController.selectedRestaurant.value.name}'),
       body:FutureBuilder(
         future: viewModel.displayCategoryByRestaurantId(mainStateController.selectedRestaurant.value.resturantId),
         builder: (context, snapshot) {
