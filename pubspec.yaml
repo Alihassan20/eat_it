@@ -42,6 +42,10 @@ dependencies:
   auto_animated:
   carousel_slider:
   flutter_zoom_drawer:
+  flutter_elegant_number_button:
+  flutter_rating_bar:
+  badges:
+  get_storage:
 
 dev_dependencies:
   flutter_test:
