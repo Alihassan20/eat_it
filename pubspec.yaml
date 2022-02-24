@@ -47,6 +47,8 @@ dependencies:
   badges:
   get_storage:
   flutter_slidable:
+  firebase_auth:
+  flutter_auth_ui:
 
 dev_dependencies:
   flutter_test:

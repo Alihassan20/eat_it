@@ -3,6 +3,7 @@ import 'package:eat_it/model/food_model.dart';
 class CartModel extends FoodModel {
     var quantity = 0;
     String restaurantId='';
+    String userUid='';
 
     CartModel({id,
         name,
@@ -11,7 +12,7 @@ class CartModel extends FoodModel {
         size,
         addon,
         description,
-        required this.quantity,required this.restaurantId})
+        required this.quantity,required this.restaurantId,required this.userUid})
         : super(
         id: id,
         name: name,
@@ -27,6 +28,8 @@ class CartModel extends FoodModel {
         final food = FoodModel.fromJson(json);
         final quantity = json['quantity'];
         final restaurantId = json['restaurantId'];
+        final userUid = json['userUid'];
+
 
 
         return CartModel(
@@ -38,7 +41,8 @@ class CartModel extends FoodModel {
             size: food.size,
             description: food.description,
             quantity: quantity,
-            restaurantId: restaurantId
+            restaurantId: restaurantId,
+            userUid: userUid
         );
     }
 
@@ -52,6 +56,8 @@ class CartModel extends FoodModel {
         data['addon'] = this.addon.map((e) => e.toJson()).toList();
         data['quantity'] = this.quantity;
         data['restaurantId'] = this.restaurantId;
+        data['userUid'] = this.userUid;
+
 
 
 
